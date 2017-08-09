@@ -25,12 +25,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
+  //  private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    CustomDrawerAdapter adapter;
+  //  CustomDrawerAdapter adapter;
 
     List<DrawerItem> dataList;
 
@@ -42,18 +43,18 @@ public class MainActivity extends AppCompatActivity {
         dataList = new ArrayList<DrawerItem>();
         mTitle = mDrawerTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+    //    mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         mDrawerLayout.setDrawerShadow(R.drawable.search,
                 GravityCompat.START);
 
         dataList.add(new DrawerItem("Message", R.drawable.search));
-        dataList.add(new DrawerItem("Search", R.drawable.search));
-        dataList.add(new DrawerItem("Delete", R.drawable.search));
+        dataList.add(new DrawerItem("Message", R.drawable.search));
+        dataList.add(new DrawerItem("Message", R.drawable.search));
 
-        adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_layout, dataList);
-        mDrawerList.setAdapter(adapter);
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+     //   adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_layout, dataList);
+     //   mDrawerList.setAdapter(adapter);
+    //    mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -121,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
         android.app.FragmentManager fm = getFragmentManager();
         fm.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
-        mDrawerList.setItemChecked(pos, true);
+    //    mDrawerList.setItemChecked(pos, true);
         setTitle(dataList.get(pos).getItemName());
-        mDrawerLayout.closeDrawer(mDrawerList);
+     //   mDrawerLayout.closeDrawer(mDrawerList);
     }
 
     @Override
